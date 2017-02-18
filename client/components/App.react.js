@@ -25,14 +25,6 @@ export default class App extends Component {
     });
   }
 
-  componentWillUpdate() {
-    return true;
-  }
-
-  componentDidUpdate() {
-    console.log(this.state);
-  }
-
   render() {
     if(this.state.dataLoaded) {
       return (

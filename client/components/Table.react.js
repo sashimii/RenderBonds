@@ -1,11 +1,25 @@
 import React from 'react';
+import './Table.scss';
 
 const Table = (props) => {
 
-  const getHeaders = (headerList = props.headerList) => {
+  const getHeaders = (
+    headerList = [
+      'Issuer',
+      'Issue Description',
+      'Currency',
+      'Years Remaining',
+      'Benchmark',
+      'Benchmark',
+      'GoC Curve',
+      '3M CDOR',
+      '3M USDL',
+      'Updated'
+    ]
+  ) => {
     let headers = headerList.map((header, index) => {
       return (
-        <th key={ 'header-' + index }>{header}</th>
+        <th key={ 'header-' + index }><a href="#">{header}</a></th>
       )
     });
     return (
@@ -18,7 +32,7 @@ const Table = (props) => {
     let rows = data.map((item, index) => {
       return (
         <tr key={ 'row-' + index } >
-          <td>{ item.securityName }</td>
+          <td><a href="#">{ item.securityName }</a></td>
           <td>{ item.description }</td>
           <td>{ item.currency }</td>
           <td>{ item.yearsRemaining }</td>
@@ -38,7 +52,7 @@ const Table = (props) => {
   };
 
   return (
-    <table className="table table-striped">
+    <table className="table table-striped secondary-levels">
       {
         getHeaders()
       }
