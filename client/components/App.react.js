@@ -15,18 +15,7 @@ export default class App extends Component {
     this.state = {
       dataLoaded: false
     };
-    this.headerList = [
-      'Issuer',
-      'Issue Description',
-      'Currency',
-      'Years Remaining',
-      'Benchmark',
-      'Benchmark',
-      'GoC Curve',
-      '3M CDOR',
-      '3M USDL',
-      'Updated'
-    ];
+
   }
 
   componentDidMount() {
@@ -48,7 +37,7 @@ export default class App extends Component {
     if(this.state.dataLoaded) {
       return (
         <div className="my-styles" style={{textAlign: 'center'}}>
-            <Table headerList={ this.headerList } data={ this.data }/>
+            <Table data={ this.data }/>
         </div>
       );
     } else {
